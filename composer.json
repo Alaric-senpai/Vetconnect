@@ -1,0 +1,24 @@
+{
+    "name": "alaric-senpai/vetconnect",
+    "description": "a vet tracking app",
+    "type": "project",
+    "scripts": {
+        "dev": "vendor/bin/php-icons scan"
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^6.10",
+        "yassinedoghri/php-icons": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlaricSenpai\\Vetconnect\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alaric senpai",
+            "email": "ckagenou96@gmail.com"
+        }
+    ]
+}
