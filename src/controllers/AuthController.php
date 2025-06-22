@@ -93,4 +93,8 @@ public function handleRegister() {
             exit;
         }
     }
+
+    public function showResetPassword(){
+        require_once __DIR__ . "/../views/resetpassword.php";
+    }
 }

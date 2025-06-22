@@ -68,31 +68,19 @@ $reports = $reportModel->getReportsByPet($petId);
       <?php foreach ($reports as $report): 
         $vet = $userModel->findUserByVetId($report['vet_id']);
       ?>
-        <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-all space-y-2">
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-bold text-emerald-800">Visit: <?= htmlspecialchars($report['visit_date']) ?></h3>
-            <span class="text-xs italic text-gray-500"><?= date("M d, Y", strtotime($report['created_at'])) ?></span>
+        <a href="?page=view_medical_report&report_id=<?php echo $report['id'] ?>">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg mb-5 p-4 shadow-sm hover:shadow-md transition-all space-y-2">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-bold text-emerald-800">Visit: <?= htmlspecialchars($report['visit_date']) ?></h3>
+              <span class="text-xs italic text-gray-500"><?= date("M d, Y", strtotime($report['created_at'])) ?></span>
+            </div>
+  
+            <p class="text-sm text-gray-700"><span class="font-semibold">Vet:</span> Dr. <?= htmlspecialchars($vet['name']) ?></p>
+  
+  
           </div>
 
-          <p class="text-sm text-gray-700"><span class="font-semibold">Vet:</span> Dr. <?= htmlspecialchars($vet['name']) ?></p>
-
-          <div>
-            <h4 class="text-sm font-medium text-gray-700">Diagnosis</h4>
-            <p class="bg-white rounded-md p-2 text-sm text-gray-800"><?= nl2br(htmlspecialchars($report['diagnosis'])) ?></p>
-          </div>
-
-          <div>
-            <h4 class="text-sm font-medium text-gray-700">Treatment</h4>
-            <p class="bg-white rounded-md p-2 text-sm text-gray-800"><?= nl2br(htmlspecialchars($report['treatment'])) ?></p>
-          </div>
-
-          <?php if (!empty($report['notes'])): ?>
-          <div>
-            <h4 class="text-sm font-medium text-gray-700">Notes</h4>
-            <p class="bg-white rounded-md p-2 text-sm text-gray-800"><?= nl2br(htmlspecialchars($report['notes'])) ?></p>
-          </div>
-          <?php endif; ?>
-        </div>
+        </a>
       <?php endforeach; ?>
     <?php endif; ?>
   </div>

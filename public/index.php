@@ -36,6 +36,7 @@ $routes = [
     'signup'            => fn() => (new AuthController())->showRegister(),
     'login_submit'      => fn() => (new AuthController())->handleLogin(),
     'register_submit'   => fn() => (new AuthController())->handleRegister(),
+    'reset_password'=> fn() => (new AuthController())->showResetPassword(),
     'logout'            => function () {
         session_destroy();
         session_start();
@@ -57,6 +58,12 @@ $routes = [
     'save_medical_report'=> fn() => (new MedicalController())->saveMedicalReport(),
     'view_medical_report'=> fn() => (new MedicalController())->viewMedicalReport($report),
     'pets_medical_records'=> fn()=> (new MedicalController())->showPetsMedicalRecords($pet),
+    'add_user'=> fn()=> (new AdminController())->showCreateUser(),
+    'administrative_user_add'=> fn() => (new AdminController())->adminstrativeUserAdd(),
+    'manage_users'=> fn() => (new AdminController())->showManageUsers(),
+    'system_logs'=> fn() => (new AdminController())->showSystemLogs(),
+    'administrative_user_delete'=> fn() => (new AdminController())->adminstrativeUserDelete(),
+    'administrative_user_edit'=> fn() => (new AdminController())->adminstrativeUserEdit(),
 ];
 
 // Call route handler or fallback

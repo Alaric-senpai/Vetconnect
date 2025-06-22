@@ -113,7 +113,9 @@ $allpets = $pet->getAllByUser();
             <div class="border border-slate-300 rounded-lg p-3 flex shadow-sm hover:shadow-md transition-all duration-300 ease-in-out hover:scale-105 bg-white group items-center">
               <img src="assets/images/pet.jpg" alt="pet avatar" class="w-16 h-16 rounded-full object-cover group-hover:scale-110 transition-transform duration-300" />
               <div class="ml-4">
-                <h2 class="text-blue-500 text-lg font-semibold"><?= htmlspecialchars($pet['name']) ?></h2>
+              <a href="?page=pets_medical_records&pet_id=<?php echo $pet['id'] ?>">
+                  <h2 class="text-2xl font-bold text-emerald-700 underline underline-offset-4 mb-2"><?= htmlspecialchars($pet['name']) ?></h2>
+              </a>
                 <p class="text-gray-600 italic text-sm"><?= htmlspecialchars($pet['species']) ?> - <?= htmlspecialchars($pet['breed']) ?></p>
                 <p class="text-gray-500 text-xs">Age: <?= (int)$pet['age'] ?> | Gender: <?= htmlspecialchars($pet['sex']) ?></p>
               </div>

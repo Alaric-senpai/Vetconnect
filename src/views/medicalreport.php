@@ -9,10 +9,6 @@ use App\Models\User\User;
 use App\Models\Pet\Pet;
 use App\Models\MedicalReport\MedicalReport;
 
-// Start session if not started
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 
 $pet = new Pet();
 $appointctr = new Appointment();

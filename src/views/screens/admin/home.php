@@ -44,9 +44,9 @@ $totalAppointments = $appointments->countAllAppointments();
   <a href="?page=add_user" class="bg-green-600 hover:bg-green-700 text-white text-sm px-4 py-2 rounded shadow">
     Add User
   </a>
-  <a href="?page=view_appointments" class="bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded shadow">
+  <!-- <a href="?page=view_appointments" class="bg-purple-600 hover:bg-purple-700 text-white text-sm px-4 py-2 rounded shadow">
     View Appointments
-  </a>
+  </a> -->
   <a href="?page=system_logs" class="bg-gray-700 hover:bg-gray-800 text-white text-sm px-4 py-2 rounded shadow">
     System Logs
   </a>

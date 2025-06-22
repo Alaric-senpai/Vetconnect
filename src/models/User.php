@@ -60,6 +60,35 @@ class User{
         }
     }
 
+    public function Update( int $id, $data)
+    {
+        $stmt = $this->db->prepare("UPDATE {$this->table} set name=?, email=?, phone=?, address=?,role=? where id=?");
+        $stmt->bind_param(
+            'sssssi',
+            $data['name'],
+            $data['email'],
+            $data['phone'],
+            $data['address'],
+            $data['role'],
+            $id
+        );
+        
+        $result = $stmt->execute();
+            $stmt->close();
+
+        $user = $this->findByEmail($data['email']);
+
+        if($data['role'] === 'vet'){
+            $stmt2 = $this->db->prepare('insert into vets (user_id) values(?)');
+            $stmt2->bind_param('s', $user['id']);
+            $newres =$stmt2->execute();
+            $stmt2->close();
+            return $newres;
+        }else {
+            return $result;
+        }
+    }
+
 
     /**
      * Method to fetch aall user from db

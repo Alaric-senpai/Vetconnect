@@ -1,0 +1,22 @@
+:root{
+    --main-bg: url('../images/vetconnect.png')
+}
+
+.bg-image{
+    background-image: var(--main-bg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+}
+.bg-image::after{
+    content: "";
+    position: absolute;
+    opacity: .43;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    z-index: -1;
+}
